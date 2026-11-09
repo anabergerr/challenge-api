@@ -137,6 +137,7 @@ Por último, você precisa implementar um endpoint que retorne o estado de todas
 1. Uma API construída com boas práticas e seguindo as convenções esperadas para uma API REST HTTP.
 2. Código limpo e com bons testes.
 3. Domínio da linguagem Python, seu ecossistema e boas práticas.
+4. Uma interface gráfica desenvolvida em React para interagir com a API. A interface deve permitir configurar a malha e lançar sondas, enviar comandos de movimento e visualizar a posição e a direção das sondas. A comunicação entre a interface e a API deve ocorrer pelos endpoints implementados no desafio.
 
 ### Itens adicionais / Legais de ter
 
