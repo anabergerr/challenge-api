@@ -1,0 +1,584 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #f4e6d8;
+  background: #0b0714;
+
+  --mars-dark: #2b1b1f;
+  --mars-rust: #d1553a;
+  --mars-sand: #e5b98a;
+  --mars-sand-light: #f3ddc0;
+  --mars-dust: #c98f6a;
+  --ink: #f4e6d8;
+  --muted: #bda38f;
+  --line: #4a2a26;
+  --panel: #1b1018;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #0b0714;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 14%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 27% 8%, #ffe8c4 50%, transparent 51%),
+    radial-gradient(1px 1px at 43% 19%, #fff 50%, transparent 51%),
+    radial-gradient(1.6px 1.6px at 61% 6%, #d9e6ff 50%, transparent 51%),
+    radial-gradient(1px 1px at 74% 21%, #fff 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 88% 11%, #ffe8c4 50%, transparent 51%),
+    radial-gradient(1px 1px at 8% 33%, #fff 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 34% 41%, #d9e6ff 50%, transparent 51%),
+    radial-gradient(1px 1px at 52% 29%, #fff 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 69% 37%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 92% 31%, #ffe8c4 50%, transparent 51%),
+    radial-gradient(circle at 78% 12%, #ff9a5c 0%, #d9552c 34%, transparent 62%),
+    linear-gradient(180deg, #0b0714 0%, #170d20 55%, #2a1424 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #f4e6d8;
+}
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.hero {
+  margin-bottom: 1.5rem;
+}
+
+.mission {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ff9b6a;
+}
+
+h1 {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 2.1rem;
+  letter-spacing: -0.01em;
+  color: #fff6ec;
+}
+
+.tagline {
+  margin: 0;
+  max-width: 52ch;
+  color: #c4a996;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+}
+
+h3 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ff9b6a;
+  margin: 1.25rem 0 0.6rem;
+}
+
+/* --- How to use --- */
+
+.help {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 8px 26px rgb(0 0 0 / 40%);
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.steps li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.steps p {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.steps strong {
+  font-size: 0.9rem;
+}
+
+.step-number,
+.step-badge {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--mars-rust);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.step-badge {
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.7rem;
+  vertical-align: middle;
+  margin-right: 0.15rem;
+}
+
+.legend {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.legend-item {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.legend-item p {
+  margin: 0.1rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.legend-item strong {
+  font-size: 0.85rem;
+}
+
+kbd {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 6px;
+  border: 2px solid #ffb98a;
+  border-bottom-width: 3px;
+  background: #2a1720;
+  font-family: inherit;
+  font-weight: 800;
+  color: #ffd9b0;
+}
+
+.tips {
+  margin: 0.9rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: rgb(255 150 90 / 9%);
+  border-left: 4px solid var(--mars-sand);
+  border-radius: 0 8px 8px 0;
+  padding: 0.6rem 0.8rem;
+}
+
+.tips.warn {
+  background: rgb(209 85 58 / 16%);
+  border-left-color: var(--mars-rust);
+}
+
+code {
+  background: rgb(255 180 120 / 16%);
+  color: #ffd9b0;
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+/* --- Panels --- */
+
+.panels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  box-shadow: 0 8px 26px rgb(0 0 0 / 40%);
+  flex: 1 1 280px;
+  /* Without this, the long text of an id inside an option pushes the form off screen. */
+  min-width: 0;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+input,
+select {
+  padding: 0.5rem;
+  border: 1px solid #5b3630;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #ffe9d4;
+  background: #2a1720;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--mars-rust);
+  outline-offset: 1px;
+}
+
+button {
+  padding: 0.55rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #e06444 0%, #b8432a 100%);
+  color: #fff6ec;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #7c2a18;
+}
+
+button:hover {
+  background: linear-gradient(180deg, #ec7350 0%, #c84b30 100%);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.command-buttons {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.command {
+  flex: 1;
+  padding: 0.5rem;
+  background: #35202a;
+  color: #ffd9b0;
+  font-family: ui-monospace, monospace;
+  font-size: 1rem;
+  box-shadow: 0 2px 0 #170c11;
+}
+
+.command:hover {
+  background: #462a35;
+}
+
+.command.ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-family: inherit;
+  box-shadow: none;
+}
+
+.command.ghost:hover {
+  background: rgb(255 150 90 / 10%);
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.message {
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.error {
+  background: rgb(209 60 40 / 18%);
+  color: #ffb4a2;
+  border: 1px solid rgb(209 60 40 / 45%);
+}
+
+.ok {
+  background: rgb(80 190 130 / 14%);
+  color: #9ff0c0;
+  border: 1px solid rgb(80 190 130 / 40%);
+}
+
+/* --- Board --- */
+
+.board {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem 1.25rem 0.75rem;
+  border: 1px solid #7a3a22;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #3a1c1a 0%, #56281f 55%, #6d3323 100%);
+  box-shadow:
+    inset 0 0 40px rgb(255 140 80 / 12%),
+    0 10px 30px rgb(0 0 0 / 45%);
+}
+
+.board h2 {
+  color: #ffd9b0;
+}
+
+.board-inner {
+  display: inline-block;
+}
+
+.axis-title,
+.axis-name {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #ff9b6a;
+}
+
+.row {
+  display: flex;
+}
+
+.axis {
+  width: 1.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #c7906c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tick {
+  width: 2.4rem;
+}
+
+.cell {
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 2.4rem;
+  border: 1px solid rgb(255 160 100 / 18%);
+  background: rgb(255 130 70 / 7%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms ease;
+}
+
+.cell.occupied {
+  background: rgb(255 168 90 / 16%);
+}
+
+/* --- Rover in the grid --- */
+
+.rover {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: block;
+  transform-origin: center;
+  transition: transform 220ms ease;
+  filter: drop-shadow(0 1px 1px rgb(60 25 10 / 35%));
+}
+
+/* Drawn pointing NORTH (upward). */
+.rover-north {
+  transform: rotate(0deg);
+}
+
+.rover-east {
+  transform: rotate(90deg);
+}
+
+.rover-south {
+  transform: rotate(180deg);
+}
+
+.rover-west {
+  transform: rotate(270deg);
+}
+
+.rover-body {
+  fill: #f0d3ae;
+  stroke: var(--mars-dark);
+  stroke-width: 1.1;
+}
+
+.rover-wheels rect {
+  fill: var(--mars-dark);
+}
+
+.rover-panel {
+  fill: #4b6ea8;
+  stroke: var(--mars-dark);
+  stroke-width: 0.7;
+}
+
+.rover-panel-line {
+  stroke: #2c4468;
+  stroke-width: 0.55;
+}
+
+.rover-nose {
+  fill: var(--mars-rust);
+  stroke: var(--mars-dark);
+  stroke-width: 0.8;
+}
+
+.rover-lens {
+  fill: #ffe9b8;
+  stroke: var(--mars-dark);
+  stroke-width: 0.5;
+}
+
+.rover-selected {
+  filter: drop-shadow(0 0 5px rgb(255 196 110 / 95%));
+}
+
+.rover-selected .rover-body {
+  fill: #ffe4bd;
+}
+
+.count {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--mars-rust);
+}
+
+/* --- Table --- */
+
+table {
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  width: 100%;
+  background: var(--panel);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgb(0 0 0 / 40%);
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+  /* A long id has nowhere to break and would push the table off screen. */
+  overflow-wrap: anywhere;
+}
+
+th {
+  background: #2e1a22;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffb98a;
+}
+
+tbody tr {
+  cursor: pointer;
+}
+
+/* Keyboard users need to see which row has focus. */
+tbody tr:focus-visible {
+  outline: 2px solid var(--mars-rust);
+  outline-offset: -2px;
+}
+
+tbody tr:hover {
+  background: rgb(255 150 90 / 8%);
+}
+
+tbody tr.selected {
+  background: rgb(255 150 90 / 16%);
+  font-weight: 600;
+  color: #ffd9b0;
+}
+
+.empty {
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: var(--panel);
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 0.9rem;
+  margin: 0;
+}
+
+/* --- Reset mission --- */
+
+.reset-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem 0 1.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.reset-bar .ghost {
+  padding: 0.45rem 0.9rem;
+  background: transparent;
+  border: 1px solid #7a5348;
+  color: #ffcfa8;
+  font-size: 0.8rem;
+  box-shadow: none;
+}
+
+.reset-bar .ghost:hover:not(:disabled) {
+  background: rgb(255 150 90 / 12%);
+}
+
+.reset-bar .ghost:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.reset-bar .danger {
+  padding: 0.45rem 0.9rem;
+  background: var(--mars-rust);
+  font-size: 0.8rem;
+}
